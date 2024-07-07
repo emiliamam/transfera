@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:gravity="center_vertical">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+        <ImageView
+            android:id="@+id/logo_bank"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/circle_with_questions" />
+        <TextView
+            android:id="@+id/txt_bank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/imageView"
+            android:fontFamily="@font/inter_bold"
+            android:text="Title"
+            android:textColor="@color/black"
+            android:layout_marginLeft="10dp"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+
+    <Switch
+        android:id="@+id/switch_energo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+
+    <TextView
+        android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout"
+        android:textColor="@color/payment_gray"
+        android:fontFamily="@font/inter_medium"
+        android:layout_marginTop="10dp"
+        android:textSize="17sp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/number"
+        android:fontFamily="@font/inter_medium"
+        android:textColor="@color/payment_gray"
+        android:layout_marginTop="10dp"
+        android:textSize="17sp"
+        android:text="TextView" />
+
+
+</RelativeLayout>

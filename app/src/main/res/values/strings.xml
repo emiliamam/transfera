@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Transfer</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_basic_interface">Basic_Interface</string>
+    <string name="title_payments">Платежи</string>
+    <string name="title_cards">Реквизиты</string>
+    <string name="title_settings">Настройки</string>
+    <string name="save">Сохранить</string>
+    <string name="send">Отправить</string>
+    <string name="next">Продолжить</string>
+    <string name="enter_api">Введите API-ключ</string>
+    <string name="find_api">Где взять API-ключ?</string>
+    <string name="find_link">Где взять ссылку?</string>
+    <string name="enter_language">Выберите язык </string>
+    <string name="setting_api">Настройки API </string>
+    <string name="setting_logs">Отправить логи </string>
+    <string name="setting_language">Смена языка </string>
+    <string name="setting_frame_language">Сменить языка </string>
+    <string name="setting_frame_api">Настройка API </string>
+    <string name="energo">Энергосбережение</string>
+    <string name="link">Вставьте ссылку</string>
+</resources>

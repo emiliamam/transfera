@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_payments">
+
+    <fragment
+        android:id="@+id/navigation_payments"
+        android:name="com.example.transfer.ui.payments.PaymentsFragment"
+        android:label="@string/title_payments"
+        tools:layout="@layout/fragment_payments" />
+
+    <fragment
+        android:id="@+id/navigation_cards"
+        android:name="com.example.transfer.ui.cards.CardsFragment"
+        android:label="@string/title_cards"
+        tools:layout="@layout/fragment_cards" />
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.example.transfer.ui.settings.SettingsFragment"
+        android:label="@string/title_settings"
+        tools:layout="@layout/fragment_settings" />
+</navigation>

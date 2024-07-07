@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Transfer</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_basic_interface">Basic_Interface</string>
+    <string name="title_payments">Payments</string>
+    <string name="title_cards">Requisites</string>
+    <string name="title_settings">Settings</string>
+    <string name="save">Save</string>
+    <string name="send">Send</string>
+    <string name="next">Continue</string>
+    <string name="enter_api">Enter API key</string>
+    <string name="find_api">Where to get API key?</string>
+    <string name="find_link">Where to get the link?</string>
+    <string name="enter_language">Select language</string>
+    <string name="setting_api">API settings</string>
+    <string name="setting_logs">Send logs</string>
+    <string name="setting_language">Change language</string>
+    <string name="setting_frame_language">Change language</string>
+    <string name="setting_frame_api">API settings</string>
+    <string name="energo">Energy saving</string>
+    <string name="link">Insert link</string>
+
+</resources>
