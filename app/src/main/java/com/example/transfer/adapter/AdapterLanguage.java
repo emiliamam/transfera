@@ -8,19 +8,22 @@ import android.widget.ArrayAdapter;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
 import com.example.transfer.R;
 import com.example.transfer.simpleClass.Language;
 
 import java.util.ArrayList;
 
-public class Adapter extends ArrayAdapter<Language> {
-    private int selectedPosition = -1;
-    public Adapter(Context context, ArrayList<Language> languages) {
+public class AdapterLanguage extends ArrayAdapter<Language> {
+    private int selectedPosition = 0;
+    public AdapterLanguage(Context context, ArrayList<Language> languages) {
         super(context, 0, languages);
     }
 
+    @NonNull
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
         Language language = getItem(position);
 
         if (convertView == null) {
@@ -31,6 +34,7 @@ public class Adapter extends ArrayAdapter<Language> {
         TextView textViewSubtitle = convertView.findViewById(R.id.textViewSubtitle);
         RadioButton radioButton = convertView.findViewById(R.id.radioButton);
 
+        assert language != null;
         textViewTitle.setText(language.getTitle());
         textViewSubtitle.setText(language.getSubtitle());
         radioButton.setChecked(position == selectedPosition);

@@ -11,14 +11,15 @@
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" />
+    <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
+        tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo_bg"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -29,24 +30,23 @@
             android:exported="false"
             android:label="@string/title_activity_basic_interface" />
         <activity
-            android:name=".layout.SplashScreen"
+            android:name=".layout.initialLayout.SplashScreen"
             android:exported="true"
-            android:label="@string/title_activity_splash"
+            android:label="Transfera"
             android:theme="@style/Theme.Transfer">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".layout.MainActivity"
+            android:name=".layout.initialLayout.MainActivity"
             android:exported="true"/>
         <activity
-            android:name=".layout.SelectLanguage"
+            android:name=".layout.initialLayout.SelectLanguage"
             android:exported="true"/>
         <activity
-            android:name=".layout.InputApi"
+            android:name=".layout.initialLayout.InputApi"
             android:exported="true"/>
         <activity
             android:name=".layout.settingLayout.SettingLanguage"
@@ -58,7 +58,7 @@
             android:name=".layout.settingLayout.SettingLogs"
             android:exported="true"/>
         <service
-            android:name=".MyNotificationListenerService"
+            android:name=".notifications.MyNotificationListenerService"
             android:exported="true"
             android:label="@string/app_name"
             android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
@@ -68,7 +68,7 @@
         </service>
 
         <receiver
-            android:name=".ParseNotifications"
+            android:name=".notifications.ParseNotifications"
             android:exported="true"/>
     </application>
 

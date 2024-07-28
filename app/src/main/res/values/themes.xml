@@ -1,12 +1,17 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Transfer" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="colorPrimary">@color/blue</item>
         <item name="colorOnPrimary">@android:color/white</item>
         <item name="colorButtonNormal">@android:color/black</item>
+        <item name="android:colorError">@color/red</item>
+
     </style>
 
     <style name="Theme.Transfer" parent="Base.Theme.Transfer" />
+    <style name="RedButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/red</item>
+        <item name="fontFamily">"@font/inter_medium"</item>
+<!--        <item name="texr">@color/white</item>-->
+    </style>
 </resources>

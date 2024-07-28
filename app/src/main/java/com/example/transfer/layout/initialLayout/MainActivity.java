@@ -1,19 +1,22 @@
-package com.example.transfer.layout;
+package com.example.transfer.layout.initialLayout;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.IntentFilter;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.transfer.ParseNotifications;
+import com.example.transfer.notifications.NotificationParser;
 import com.example.transfer.R;
+import com.example.transfer.helper.LocaleHelper;
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.Channel;
@@ -29,16 +32,18 @@ public class MainActivity extends AppCompatActivity {
     private final static String USERNAME = "admin";
     private final static String PASSWORD = "xnb27A$";
     private ExecutorService executor;
-    private ParseNotifications notificationReceiver;
+    private NotificationParser notificationReceiver;
 
+    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        LocaleHelper.setLocale(this, LocaleHelper.getLanguage(this));
+        Log.i("LNG", "Setlng"+LocaleHelper.getLanguage(this) );
         super.onCreate(savedInstanceState);
-//        Intent intent = new Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS);
-//        startActivity(intent);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+        EdgeToEdge.enable(this);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -46,26 +51,23 @@ public class MainActivity extends AppCompatActivity {
         });
         Button but = findViewById(R.id.button);
         executor = Executors.newFixedThreadPool(2);
+        executor.execute(new RabbitMQTask());
 
-        but.setOnTouchListener((v, event) -> {
-            executor.execute(new RabbitMQTask());
-            return false;
-        });
 
-        notificationReceiver = new ParseNotifications();
+        notificationReceiver = new NotificationParser();
         IntentFilter filter = new IntentFilter();
         filter.addAction("com.example.transfer.NOTIFICATION_LISTENER");
-        registerReceiver(notificationReceiver, filter, Context.RECEIVER_EXPORTED);
+//        registerReceiver(notificationReceiver, filter, Context.RECEIVER_EXPORTED);
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unregisterReceiver(notificationReceiver);
-        if (executor != null) {
-            executor.shutdown();
-        }
-    }
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        unregisterReceiver(notificationReceiver);
+//        if (executor != null) {
+//            executor.shutdown();
+//        }
+//    }
 
     private static class RabbitMQTask implements Runnable {
         @Override

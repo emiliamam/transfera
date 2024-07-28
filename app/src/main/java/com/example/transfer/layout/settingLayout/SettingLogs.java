@@ -18,38 +18,44 @@ import com.example.transfer.R;
 
 public class SettingLogs extends AppCompatActivity {
     private ImageButton arrowBack;
-    private LinearLayout linearLayout_logs;
-    private Button customButtom;
+    private LinearLayout linearLayoutLogs;
+    private Button customButton;
     private EditText editText;
+
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.setting_logs);
+
+        initViews();
+        setupListeners();
+    }
+
+    private void initViews() {
         arrowBack = findViewById(R.id.arrow_back);
-        linearLayout_logs = findViewById(R.id.linearLayout_logs);
-        customButtom = findViewById(R.id.buttonTitle);
-        editText.setHint(R.string.link);
+        linearLayoutLogs = findViewById(R.id.linearLayout_logs);
+        customButton = findViewById(R.id.buttonTitle);
+        customButton.setText(R.string.send);
+//        editText = findViewById(R.id.editText);
+//        editText.setHint(R.string.link);
+    }
 
-        customButtom.setText(R.string.send);
-        linearLayout_logs.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                Intent browserIntent = new
-                        Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/"));
-                startActivity(browserIntent);
-
-                return false;
-            }
+    @SuppressLint("ClickableViewAccessibility")
+    private void setupListeners() {
+        linearLayoutLogs.setOnTouchListener((v, event) -> {
+            openBrowser("https://www.google.com/");
+            return false;
         });
 
-        arrowBack.setOnTouchListener(new View.OnTouchListener() {
-            @SuppressLint("ClickableViewAccessibility")
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                finish();
-                return false;
-            }
+        arrowBack.setOnTouchListener((v, event) -> {
+            finish();
+            return false;
         });
+    }
+
+    private void openBrowser(String url) {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        startActivity(browserIntent);
     }
 }

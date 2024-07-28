@@ -15,8 +15,10 @@
     <string name="setting_api">Настройки API </string>
     <string name="setting_logs">Отправить логи </string>
     <string name="setting_language">Смена языка </string>
-    <string name="setting_frame_language">Сменить языка </string>
+    <string name="setting_frame_language">Сменить язык </string>
     <string name="setting_frame_api">Настройка API </string>
     <string name="energo">Энергосбережение</string>
     <string name="link">Вставьте ссылку</string>
+    <string name="cancel">Отменить</string>
+    <string name="today">Сегодня</string>
 </resources>

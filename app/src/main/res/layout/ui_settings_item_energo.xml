@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="20dp"
+    android:padding="10dp"
     android:gravity="center_vertical">
 
     <TextView
@@ -13,6 +13,7 @@
         android:textSize="18sp"
         android:textColor="@color/black"
         android:fontFamily="@font/inter_bold"
+        android:layout_marginLeft="10dp"
         android:text="Title" />
 
     <Switch

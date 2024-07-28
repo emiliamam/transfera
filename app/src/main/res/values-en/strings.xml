@@ -19,5 +19,6 @@
     <string name="setting_frame_api">API settings</string>
     <string name="energo">Energy saving</string>
     <string name="link">Insert link</string>
-
+    <string name="cancel">Cancel</string>
+    <string name="today">Today</string>
 </resources>

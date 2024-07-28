@@ -7,4 +7,5 @@
     <color name="navigation_gray">#F4F4F4</color>
     <color name="payment_gray">#575757</color>
     <color name="payment_card_gray">#2E2E2E</color>
+    <color name="red">#FF4A4A</color>
 </resources>

@@ -33,7 +33,7 @@ public class SettingApi extends AppCompatActivity {
         customButton.setText(R.string.save);
 
         arrowBack = findViewById(R.id.arrow_back);
-        editText = findViewById(R.id.editText);
+//        editText = findViewById(R.id.editText);
         linearLayout_api.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {

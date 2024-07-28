@@ -8,14 +8,14 @@
     android:gravity="center_vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/constraintLayoutCopy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/logo_bank"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             app:srcCompat="@drawable/circle_with_questions"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -23,9 +23,10 @@
           />
 
         <TextView
-            android:id="@+id/txt_bank"
+            android:id="@+id/numbId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:fontFamily="@font/inter_bold"
             android:text="Title"
             android:textColor="@color/payment_card_gray"
@@ -35,7 +36,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/switch_energo"
+            android:id="@+id/summ"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/inter_bold"
@@ -51,8 +52,9 @@
             android:id="@+id/imageView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/txt_bank"
+            app:layout_constraintStart_toEndOf="@+id/numbId"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/copy" />
 
@@ -62,26 +64,28 @@
         android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/constraintLayout"
+        android:layout_below="@+id/constraintLayoutCopy"
+        android:layout_marginTop="10dp"
         >
 
         <TextView
-            android:id="@+id/number"
+            android:id="@+id/numberCard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:fontFamily="@font/inter_medium"
             android:text="TextView"
             android:textColor="@color/payment_gray"
-            android:textSize="17sp"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="14sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/inter_bold"
+            android:fontFamily="@font/inter_medium"
             android:text="summ"
+            android:textSize="14sp"
             android:textColor="@color/payment_gray"
             tools:ignore="UseSwitchCompatOrMaterialXml"
             app:layout_constraintEnd_toEndOf="parent"
@@ -102,8 +106,21 @@
         android:fontFamily="@font/inter_medium"
         android:textColor="@color/gray"
         android:layout_marginTop="10dp"
-        android:textSize="17sp"
+        android:textSize="12sp"
         android:text="TextView" />
+
+    <Button
+        android:id="@+id/cancel_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/time"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_background_cancel"
+        android:foregroundGravity="center"
+        style="@style/RedButton"
+        android:text="Отменить"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
 
 
 </RelativeLayout>
